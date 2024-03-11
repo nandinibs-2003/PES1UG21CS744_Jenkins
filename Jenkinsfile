@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o your_program YOUR_SRN-1.cpp'
+                sh 'g++ -o your_program PES1UG21CS744-4.cpp'
             }
             post {
                 always {
