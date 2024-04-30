@@ -12,8 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Intentional error: Trying to execute a non-existing script
-                    sh './non_existing_script.sh'
+                    sh './output'
                     echo 'Test Stage Successful'
                 }
             }
@@ -36,5 +35,6 @@ pipeline {
         }
     }
 }
+
 
 
