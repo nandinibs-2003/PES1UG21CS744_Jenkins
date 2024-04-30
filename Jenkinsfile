@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o output PES1UG21CS744-1.cpp'
+                    sh 'g++ -o output YOUR_SRN-1.cpp'
                     echo 'Build Stage Successful'
                 }
             }
@@ -12,7 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './output'
+                    // Intentional error: Trying to execute a non-existing script
+                    sh './non_existing_script.sh'
                     echo 'Test Stage Successful'
                 }
             }
