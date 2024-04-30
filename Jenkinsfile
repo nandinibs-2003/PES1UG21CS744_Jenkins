@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o output PES1UG21CS744-1.cpp'
+                    sh 'g++ -o output YOUR_SRN-1.cpp'
                     echo 'Build Stage Successful'
                 }
             }
@@ -27,6 +27,13 @@ pipeline {
         failure {
             echo 'Pipeline failed'
         }
+        success {
+            echo 'Pipeline succeeded'
+        }
+        always {
+            echo 'Pipeline completed'
+        }
     }
 }
+
 
