@@ -1,47 +1,28 @@
 pipeline {
     agent any
-    
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o your_program YOUR_SRN-1.cpp'
-            }
-            post {
-                always {
-                    script {
-                        echo 'Build stage completed'
-                    }
+                script {
+                    sh 'g++ -o output YOUR_SRN-1.cpp'
+                    echo 'Build Stage Successful'
                 }
             }
         }
-        
         stage('Test') {
             steps {
-                sh './your_program'
-            }
-            post {
-                always {
-                    script {
-                        echo 'Test stage completed'
-                    }
+                script {
+                    sh './output'
+                    echo 'Test Stage Successful'
                 }
             }
         }
-        
         stage('Deploy') {
             steps {
-                // Add deployment steps here if needed
-            }
-            post {
-                always {
-                    script {
-                        echo 'Deploy stage completed'
-                    }
-                }
+                echo 'Deployment not required for this pipeline'
             }
         }
     }
-    
     post {
         failure {
             echo 'Pipeline failed'
